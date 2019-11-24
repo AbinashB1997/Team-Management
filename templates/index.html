@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Date of joining</th>
+            <th>Priority</th>
+            <th>Email ID</th>
+        </tr>
+        {% for todo in table %}
+        <tr>
+            <td>{{ todo["name"] }}</td>
+            <td>{{ todo["date"] }}</td>
+            <td>{{ todo["pr"] }}</td>
+            <td>{{ todo["email"] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br/>
+    <h1>Add Team-Mate</h1>
+    <form action="action1" method="POST">
+        <table>
+            <tr>
+                <td>
+                    <input name="name" placeholder="name" required>
+                </td>
+                <td>
+                    <input name="email" placeholder="Email-Id" required>
+                </td>
+                <td>
+                    <input name="date" placeholder="Date of joining" required>
+                </td>
+                <td>
+                    <input name="pr" placeholder="Priority" required>
+                </td>
+                <td>
+                <input type="submit" name="insertData" value="insertData" placeholder="Add">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <br/>
+    <h1>Remove Team-Mate</h1>
+    <form action="action3" method="POST">
+        <input name="email" placeholder="Enter Email id" required>
+        <input type="submit" value="Delete" placeholder="Delete">
+    </form>
+    <br/>
+    <h1>Update Team-Mate Details</h1>
+    <form action="action2" method="POST">
+        <input name="email" placeholder="Enter Email id" required>
+        <h3>Enter new details of Team-Mate</h3>
+        <tr>
+            <td>
+                <input name="name" placeholder="name" required>
+            </td>
+            <td>
+                <input name="email" placeholder="Email-Id" required>
+            </td>
+            <td>
+                <input name="date" placeholder="Date of joining" required>
+            </td>
+            <td>
+                <input name="pr" placeholder="Priority" required>
+            </td>
+            <td>
+                <input type="submit" name="Update" value="Update">
+            </td>
+        </tr>
+    </form>
+</body>
+</html>
