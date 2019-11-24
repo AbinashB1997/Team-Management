@@ -8,11 +8,9 @@ app = Flask(__name__)
 
 client = mongoDB(os.environ['host-0f-mongo'], 27017)
 
-db = client.mymongodbeid
-table = db.todo
-
-name = "Demo app"
-
+db = client.mymongodbeid // database
+table = db.todo 	// Collection
+ 
 @app.route('/')
 @app.route('/list')
 def show_data():
