@@ -1,1 +1,4 @@
-language: python
+language: py
+
+py:
+  "python2.7"
